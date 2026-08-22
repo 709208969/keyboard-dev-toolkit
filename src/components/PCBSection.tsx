@@ -53,8 +53,6 @@ interface PCBSectionProps {
 
 const MODEL_LINKS_DEF: { labelKey: string; filename: string | null }[] = [
   { labelKey: "model.typec", filename: "type-c-connector-3d.stp" },
-  { labelKey: "model.c5", filename: "C5-board-3d.stp" },
-  { labelKey: "model.s3", filename: "S3-board-3d.stp" },
   { labelKey: "model.hotswap", filename: "hotswap-pcb.step" },
   { labelKey: "model.4p", filename: "4p-connector-3d.stp" },
   { labelKey: "model.mcu", filename: "mcu-3d.step" },
