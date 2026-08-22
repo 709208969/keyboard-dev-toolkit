@@ -44,7 +44,11 @@ export default function UpdateDialog({ open, onClose }: UpdateDialogProps) {
   }, []);
 
   useEffect(() => {
-    if (open) runCheck();
+    if (!open) return;
+    const id = window.setTimeout(() => {
+      void runCheck();
+    }, 0);
+    return () => window.clearTimeout(id);
   }, [open, runCheck]);
 
   const handleInstall = async () => {
@@ -71,8 +75,8 @@ export default function UpdateDialog({ open, onClose }: UpdateDialogProps) {
       setPhase("installed");
       try {
         await relaunch();
-      } catch {
-        // relaunch failed — keep the dialog open, user restarts manually
+      } catch (e) {
+        console.warn("relaunch failed after update install:", e);
       }
     } catch (e) {
       setError((e as Error)?.message || String(e));
