@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "version": "2.6.0",
+    "version": "2.7.0",
     "updatedAt": "2026-08-28",
     "description": "Kindlestar PCBA pricing list (single source of truth)",
-    "note": "v2.6.0: 新增附加组件——额外小板(板载USB+5/C5+10/S3+10/自定义+15, 按PCS)、排线(FPC+1/PCS)、自定义固件(灯效400/网页400按单)、定制走线(+500设计费)；所有人工报价选项改仅提示不阻断；定位板独立报价(复用PCB板价)。价格变更请修改本文件并递增 _meta.version。"
+    "note": "v2.7.0: 定位板报价——尺寸支持手动修改、计价乘数 ×2.5、加工费下限 300 元/单；新增人工报价按钮(Discord/Email)。价格变更请修改本文件并递增 _meta.version。"
   },
   "fixedCosts": {
     "mcu": { "name": "MCU 芯片", "feePerPcs": 15.85, "noMultiplier": true },
@@ -127,12 +127,18 @@
     }
   },
   "plate": {
+    "multiplier": 2.5,
+    "minProcessFee": 300,
     "materials": [
       { "key": "fr4", "name": "1.6mm FR4 定位板", "panelPrice": 198.6, "partialPrice": 24.8, "sortOrder": 1 },
       { "key": "black_core", "name": "1.6mm 黑芯定位板", "panelPrice": 294, "partialPrice": 36.75, "sortOrder": 2 },
       { "key": "aluminum", "name": "1.5mm 阳极铝合金定位板", "panelPrice": 198.6, "partialPrice": 24.8, "sortOrder": 3 },
       { "key": "pc", "name": "1.5mm PC 透明定位板", "panelPrice": 198.6, "partialPrice": 24.8, "sortOrder": 4 }
     ]
+  },
+  "contacts": {
+    "discord": "https://discord.com/users/kindlestarkevin",
+    "email": "X709208969@gmail.com"
   },
   "discounts": []
 }
